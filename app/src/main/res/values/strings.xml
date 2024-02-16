@@ -1,0 +1,19 @@
+<resources>
+    <string name="app_name">Torch Bolster</string>
+    <string name="torch_support_title_msg">Illuminate your path in the darkness</string>
+    <string name="torch_support_msg">Find solace in the gentle flicker of the torch\'s glow, guiding your steps through the abyss of darkness with unwavering assurance.</string>
+    <string name="start">Start</string>
+    <string name="its_dark_outside">It\'s dark outside!</string>
+    <string name="its_bright_outside">It\'s bright outside!</string>
+    <string name="explanation_for_light_sensor_service">This service uses light sensor to show whether user is in the dark or bright area. Application includes a feature of toggling flashlight.</string>
+    <string name="light_notification_channel_id">channel_001</string>
+    <string name="light_notification_channel_name">Light Sensor Alert</string>
+    <string name="light_notification_channel_desc">Notifier of current intensity of light.</string>
+    <string name="permission_granted">Permission Granted!</string>
+    <string name="permission_required">Permission Required</string>
+    <string name="permanently_declined_permission_msg">It seems you permanently declined %1$s permission. You can go to app settings to grant it.</string>
+    <string name="notification_access_msg">This app needs notification permission so that it will notify you all the events.</string>
+    <string name="grant_permission">Grant Permission</string>
+    <string name="okay">Okay</string>
+    <string name="sensor_does_not_exist">Sensor does not exist on your device!</string>
+</resources>
