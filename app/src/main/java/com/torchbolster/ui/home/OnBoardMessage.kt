@@ -23,7 +23,7 @@ fun OnBoardMessage(
     imgRes: Int,
     titleRes: Int,
     msgRes: Int,
-    imagePadding: PaddingValues = PaddingValues(horizontal = 30.dp)
+    imagePadding: PaddingValues = PaddingValues(horizontal = 0.dp)
 ) {
     Column(
         modifier = modifier,
@@ -42,7 +42,7 @@ fun OnBoardMessage(
 
         Text(
             text = stringResource(id = titleRes),
-            style = MaterialTheme.typography.titleSmall,
+            style = MaterialTheme.typography.titleMedium,
             textAlign = TextAlign.Center
         )
 
@@ -50,7 +50,8 @@ fun OnBoardMessage(
 
         Text(
             text = stringResource(id = msgRes),
-            textAlign = TextAlign.Center
+            textAlign = TextAlign.Center,
+            style = MaterialTheme.typography.bodyMedium,
         )
     }
 }

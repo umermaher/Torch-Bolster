@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">Torch Bolster</string>
     <string name="torch_support_title_msg">Illuminate your path in the darkness</string>
-    <string name="torch_support_msg">Find solace in the gentle flicker of the torch\'s glow, guiding your steps through the abyss of darkness with unwavering assurance.</string>
+    <string name="torch_support_msg">Navigate the shadows with clarity and confidence as the torch\'s glow leads your way.</string>
     <string name="start">Start</string>
     <string name="its_dark_outside">It\'s dark outside!</string>
     <string name="its_bright_outside">It\'s bright outside!</string>
@@ -16,4 +16,5 @@
     <string name="grant_permission">Grant Permission</string>
     <string name="okay">Okay</string>
     <string name="sensor_does_not_exist">Sensor does not exist on your device!</string>
+    <string name="bolster_sense">Bolster Sense</string>
 </resources>

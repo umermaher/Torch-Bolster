@@ -40,7 +40,7 @@ object ServiceModule {
         return notificationHelper.getNotificationBuilder(
             context.getString(R.string.light_notification_channel_id),
             com.torchbolster.utils.LIGHT_SENSOR_NOTIFICATION_ID,
-            title = context.getString(R.string.app_name),
+            title = context.getString(R.string.bolster_sense),
             msgBody = "-",
             contentIntent = intent,
             alertOnlyOnce = true,

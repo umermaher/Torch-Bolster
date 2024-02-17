@@ -41,6 +41,7 @@ class LightSensorService: Service() {
 
     private var monitorJob: Job? = null
 
+    private var isServiceRunning = false
 
     override fun onBind(intent: Intent?): IBinder? = null
 
@@ -48,6 +49,7 @@ class LightSensorService: Service() {
         when(intent?.action) {
             ServiceActions.START.toString() -> start()
             ServiceActions.STOP.toString() -> {
+                isServiceRunning = false
                 lightSensor.stopListening()
                 monitorJob?.cancel()
                 flashLightManager.disableFlashLight()
@@ -59,6 +61,7 @@ class LightSensorService: Service() {
     }
 
     private fun start() {
+        isServiceRunning = true
         lightSensor.startListening()
         flashLightManager.registerTorchCallback()
 
@@ -84,21 +87,23 @@ class LightSensorService: Service() {
         }
 
         monitorJob = CoroutineScope(Dispatchers.Default).launch {
-            while (true) {
+            while (isServiceRunning) {
                 val startTime = System.currentTimeMillis()
                 while ((lux ?: 0f) <= 2f &&
                     System.currentTimeMillis() - startTime < TORCH_UPDATE_INTERVAL
                 ) {
                     // Value is 0, waiting...
                 }
-                if ((lux ?: 0f) <= 2f) {
-                    // Perform further action when the value is 0 for 10 seconds
+                // isServiceRunning can be false at the moment
+                if ((lux ?: 0f) <= 2f && isServiceRunning) {
                     flashLightManager.enableFlashLight()
-                } else
+                } else {
                     flashLightManager.disableFlashLight()
+                }
                 delay(1000L)
                 Log.i("Loop", "Looping")
             }
+            flashLightManager.disableFlashLight()
         }
     }
 

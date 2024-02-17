@@ -6,8 +6,11 @@ import androidx.activity.compose.rememberLauncherForActivityResult
 import androidx.activity.result.contract.ActivityResultContracts
 import androidx.compose.foundation.layout.Arrangement
 import androidx.compose.foundation.layout.Column
+import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.layout.size
 import androidx.compose.material3.CenterAlignedTopAppBar
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.Scaffold
@@ -21,6 +24,7 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.platform.LocalLifecycleOwner
 import androidx.compose.ui.res.stringResource
+import androidx.compose.ui.unit.dp
 import com.torchbolster.R
 import com.torchbolster.ui.MainActivity
 import com.torchbolster.utils.UiText
@@ -90,9 +94,7 @@ fun HomeScreen(
         topBar = {
             CenterAlignedTopAppBar(
                 title = {
-                    Text(
-                        text = stringResource(id = R.string.app_name),
-                    )
+                    Text(text = stringResource(id = R.string.app_name),)
                 },
             )
         }
@@ -105,7 +107,8 @@ fun HomeScreen(
             verticalArrangement = Arrangement.Center
         ) {
             OnBoardMessage(
-                imgRes = R.drawable.ic_torch,
+                modifier = Modifier.padding(24.dp),
+                imgRes = R.drawable.img_torch_support,
                 titleRes = R.string.torch_support_title_msg,
                 msgRes = R.string.torch_support_msg
             )
